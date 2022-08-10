@@ -13,7 +13,7 @@
 using namespace std;
 
 template <class X> class Stack{
-    int tos,capacity;
+    int tos,SIZE;
     X *stack;
     public:
     Stack(int);
@@ -31,7 +31,7 @@ template <class X> class Stack{
 
 template <class X> Stack<X>::Stack(int size){
     stack=new X[size];
-    capacity=size;
+    SIZE=size;
     tos=-1;
 }
 
@@ -41,6 +41,7 @@ template <class X> void Stack<X>::push(X ele){
         return;
     }
     stack[++tos]=ele;
+    show();
 }
 
 template <class X> X Stack<X>::pop(){
@@ -48,7 +49,9 @@ template <class X> X Stack<X>::pop(){
         cout<<"Stack Underflow"<<endl;
         return 0;
     }
-    return stack[tos--];
+    tos--;
+    show();
+    return stack[tos+1];
 }
 
 template <class X> X Stack<X>::peek(){
@@ -71,7 +74,7 @@ template <class X> bool Stack<X>::isEmpty(){
 }
 
 template <class X> bool Stack<X>::isFull(){
-    if (tos==capacity-1) return true;
+    if (tos==SIZE-1) return true;
     else return false;
 }
 
@@ -79,6 +82,7 @@ template <class X> void Stack<X>::show(){
     for (int i=tos;i>-1;i--){
         cout<<stack[i]<<endl;
     }
+    cout<<endl;
     return;
 }
 
@@ -96,7 +100,7 @@ int main(){
     // int_stack.show();
     str_stack.push("Jay");
     str_stack.push("Dave");
-    str_stack.show();
+    // str_stack.show();
     cout<<str_stack.size()<<endl;
     return 0;
 }
