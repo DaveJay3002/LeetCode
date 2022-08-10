@@ -71,7 +71,7 @@ template <class X> X CirQueue<X>::dequeue(){
     }
     else{
         element=queue[front];
-        queue[front]="______";
+        queue[front]=false;
         if (front>=rear){
             front=rear=-1;
         }
