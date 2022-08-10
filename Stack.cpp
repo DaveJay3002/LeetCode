@@ -94,13 +94,10 @@ int main(){
     int_stack.push(12);
     int_stack.push(13);
     int_stack.push(14);
-    // int_stack.show();
     int_stack.pop();
     int_stack.pop();
-    // int_stack.show();
     str_stack.push("Jay");
     str_stack.push("Dave");
-    // str_stack.show();
     cout<<str_stack.size()<<endl;
     return 0;
 }
