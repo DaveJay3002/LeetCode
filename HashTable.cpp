@@ -66,10 +66,10 @@ template<class X> void HashTable<X>::displayhash(){
 int main(){
     auto start=chrono::high_resolution_clock::now();
 
-    int keys[]={231, 321, 212, 321, 433, 262};
-    string data[]={"clock","time","start","stop","seconds","end"};
+    int keys[]={231, 321, 212, 321, 433, 262, 56,65,45,789,13,456,123,159,15,48,36,78,89,20,56,8465,1354,789,135};
+    string data[]={"Lorem", "Ipsum", "is", "simply", "dummy", "text", "of", "the", "printing", "and", "typesetting", "industry.", "Lorem", "Ipsum", "has", "been", "the", "industry's", "standard", "dummy", "text", "ever", "since", "the", "1500s"};
     int size=sizeof(keys)/sizeof(keys[0]);
-
+    
     HashTable<string> ht(size);
 
     for(int i=0;i<size;i++){
@@ -78,7 +78,7 @@ int main(){
 
     ht.displayhash();
 
-    ht.deleteitem(231);
+    ht.deleteitem(321);
 
     // ht.displayhash();
 
